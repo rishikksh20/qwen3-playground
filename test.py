@@ -78,16 +78,16 @@ if __name__ == "__main__":
     prompt = "Please explain the climate change and how it impacts our future."
 
     QWEN3_CONFIG = {
-            "vocab_size": 151_936,  # Vocabulary size
-            "context_length": 40_960,  # Context length that was used to train the model
-            "emb_dim": 1024,  # Embedding dimension
-            "n_heads": 16,  # Number of attention heads
-            "n_layers": 28,  # Number of layers
-            "hidden_dim": 3072,  # Size of the intermediate dimension in FeedForward
-            "head_dim": 128,  # Size of the heads in GQA
-            "qk_norm": True,  # Whether to normalize queries and keys in GQA
-            "n_kv_groups": 8,  # Key-Value groups for grouped-query attention
-            "rope_base": 1_000_000.0,  # The base in RoPE's "theta"
+            "vocab_size": 151_936,
+            "context_length": 40_960,
+            "emb_dim": 1024,
+            "n_heads": 16,
+            "n_layers": 28,
+            "hidden_dim": 3072,
+            "head_dim": 128,
+            "qk_norm": True,
+            "n_kv_groups": 8,
+            "rope_base": 1_000_000.0,
             "dtype": torch.bfloat16
         }
     test_qwen3_0_6B(prompt, QWEN3_CONFIG)
