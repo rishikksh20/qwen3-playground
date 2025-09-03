@@ -1,6 +1,6 @@
 # Readable Implementation of Qwen3 0.6B Model
-## Config :
-```
+## Qwen3 0.6B Model Config :
+```python
 QWEN3_CONFIG = {
             "vocab_size": 151_936, 
             "context_length": 40_960, 
