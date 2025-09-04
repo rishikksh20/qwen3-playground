@@ -17,6 +17,8 @@ QWEN3_CONFIG = {
 ```
 
 ## Load Huggingface Pretrained Weight and Testing :
+1. **Load Model :**
+   
 ```python
 
 import torch
@@ -48,8 +50,11 @@ model = Qwen3Model(dim=config["emb_dim"], depth=config["n_layers"], n_heads=conf
                    num_groups=config["n_kv_groups"], head_dim=config["head_dim"], mlp_dim=config["hidden_dim"],
                    vocab_size=config["vocab_size"], context_length=config["context_length"], dtype=config["dtype"])
 device = torch.device("cuda")
+```
 
+**2. Load Huggingface Weight to loaded Model :**
 
+```python
 # Huggingface Weight loading 
 repo_id = "Qwen/Qwen3-0.6B"
 
@@ -79,8 +84,11 @@ tokenizer = Qwen3Tokenizer(
     add_generation_prompt=True,
     add_thinking=True
 )
+```
 
+**3. Inference or Sampling through model :**
 
+```python
 # Prompt 
 prompt = "Please explain the climate change and how it impacts our future."
 print(f"Prompt : {prompt}")
@@ -111,3 +119,7 @@ for token in advance_decoding(
 ```
 
 
+## References:
+* https://github.com/Emericen/tiny-qwen/
+* https://github.com/xingchensong/FlashCosyVoice/
+* https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/11_qwen3/standalone-qwen3.ipynb
